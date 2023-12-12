@@ -3,7 +3,7 @@ export const enum SCREENS {
     HOME = 'HOME',
     BUTTONTABS ='BUTTONTABS',
     SETTING = 'SETTING',
-    TICKSCREEN = 'TICKSCEENS',
+    TICKSCREEN = 'SAVED',
     SEARCH = 'SEARCH',
 }
 
@@ -16,7 +16,8 @@ export const COLORS = {
     transparent: 'transparent',
     white: 'white',
     primarycolor: '#11b88f',
-    secondarycolor: '#888888'
+    secondarycolor: '#a2deb2',
+
 }
 
 export const SIZES = {
@@ -39,4 +40,11 @@ export const FONTS= {
 export const TEXT = {
     LOGIN : 'LOGIN',
     SIGNUP: 'SIGN-UP',
+}
+
+export const ICONS = {
+    home: require('../images/homeicon3.png'),
+    setting: require('../images/settingicons.png'),
+    tick: require('../images/tickicon2.png'),
+    search: require('../images/searchicons.png')
 }
