@@ -8,6 +8,7 @@ import SearchScreen from "../screen/searchscreen/SearchScreen";
 import { MainStackParamList } from "./TypeCheck";
 import Tickscreen from "../screen/tickscreen/Tickscreen";
 import TabsIcons from "../components/TabsIcons";
+import DetailPage from "../screen/DetailPage/DetailPage";
 
 
 const Stack = createStackNavigator<MainStackParamList>()
@@ -21,6 +22,7 @@ export const MainNavigation = () => (
         <Stack.Screen name={SCREENS.SPLASHSCREEN} component={SplashScreen} />
         {/* <Stack.Screen name={SCREENS.HOME} component={Home} /> */}
         <Stack.Screen name={SCREENS.BUTTONTABS} component={MyTabs} />
+        <Stack.Screen name={SCREENS.DETAIL} component={DetailPage} />
     </Stack.Navigator>
 )
 

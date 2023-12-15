@@ -35,3 +35,20 @@
 
 // export const {useSearchMealByNameQuery} = foodApi;
 
+
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { ResponseCategory, ResponseMeal } from './Type';
+export const FoodApi = createApi({
+    reducerPath: 'FoodApi',
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://www.themealdb.com/api/json/v1/1/' }),
+    endpoints: builder => ({
+        getTrendingMeal: builder.query<ResponseMeal, string>({
+            query: (name) => `search.php?s=${name}`
+        }),
+        getCategories: builder.query<ResponseCategory, void>({
+            query: (name) => `categories.php`
+        }),
+    })
+})
+
+export const { useGetTrendingMealQuery ,useGetCategoriesQuery} = FoodApi;

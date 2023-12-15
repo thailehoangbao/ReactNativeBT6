@@ -5,11 +5,14 @@ import type { RouteProp } from '@react-navigation/native';
 export type MainStackParamList = {
     HOME: undefined,
     SPLASHSCREEN: undefined,
-    BUTTONTABS: undefined
+    BUTTONTABS: undefined,
+    DETAIL: undefined,
 };
 
 export type PropsPush = NativeStackScreenProps<MainStackParamList,SCREENS.HOME>
 export type PropsPushButtonTabsPage = NativeStackNavigationProp<MainStackParamList,SCREENS.BUTTONTABS>
 
 export type PropsRoute = RouteProp<MainStackParamList,SCREENS.HOME>
+
+export type PropsPushTrendingToDetailPage= NativeStackNavigationProp<MainStackParamList,SCREENS.DETAIL>
 
