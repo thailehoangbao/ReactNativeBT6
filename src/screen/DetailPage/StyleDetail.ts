@@ -39,7 +39,7 @@ export const styleDetail = StyleSheet.create({
         borderColor: COLORS.white,
         borderRadius: 12,
         marginBottom: SIZES.paddingSmall,
-        backgroundColor: 'rgba(0,0,0,0.5)',
+        overflow: 'hidden',
     },
     cBottomAvatar: {
         flexDirection: 'row',
