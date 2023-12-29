@@ -8,10 +8,10 @@ import { PropsPushTrendingToDetailPage } from '../../../navigation/TypeCheck'
 import { SCREENS } from '../../../constant/constant'
 
 export default function Trending() {
-    const {data,isLoading} = useGetTrendingMealQuery('bread');
+    const {data,isLoading} = useGetTrendingMealQuery('rice');
     const navigation = useNavigation<PropsPushTrendingToDetailPage>()
-    const onSendToDetailPage = () => {
-        navigation.push(SCREENS.DETAIL)
+    const onSendToDetailPage = (id:string) => {
+        navigation.push(SCREENS.DETAIL,{id})
     } 
     return (
         <View style={styleHome.cTrending}>
@@ -20,7 +20,7 @@ export default function Trending() {
                 style={{borderRadius: 12}}
                 data={data?.meals ?? []}
                 horizontal
-                renderItem={({item}) => <ItemFood onPress={onSendToDetailPage} url={item.strMealThumb} title={item.strMeal} category={item.strInstructions} tags={item.strTags}/>}
+                renderItem={({item}) => <ItemFood id={item.idMeal} onPress={onSendToDetailPage} url={item.strMealThumb} title={item.strMeal} category={item.strInstructions} tags={item.strTags}/>}
             />
         </View>
     )

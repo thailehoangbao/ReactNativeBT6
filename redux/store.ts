@@ -3,8 +3,9 @@
 // import { foodApi } from '../api/FoodApi'
 // // import DetailReducer from '../src/screen/detail/DetailReducer'
 
-import { configureStore } from "@reduxjs/toolkit";
-import { FoodApi } from "../api/FoodApi";
+
+
+
 
 
 // export const store = configureStore({
@@ -21,12 +22,19 @@ import { FoodApi } from "../api/FoodApi";
 // // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 // export type AppDispatch = typeof store.dispatch
 
+import { configureStore } from "@reduxjs/toolkit";
+import { FoodApi } from "../api/FoodApi";
+import { BookMarkSlice, ListDataBookmark } from "./BookMarkReducer";
+
+
 
 export const store = configureStore({
     reducer: {
-        [FoodApi.reducerPath]: FoodApi.reducer
+        [FoodApi.reducerPath]: FoodApi.reducer,
+        [BookMarkSlice.reducerPath] : BookMarkSlice.reducer
     },
-    middleware: (getDefaultMiddleWare) => getDefaultMiddleWare().concat(FoodApi.middleware)
+    middleware: (getDefaultMiddleWare) => getDefaultMiddleWare().concat(FoodApi.middleware),
+    
 })
 
 export type RootState = ReturnType<typeof store.getState>

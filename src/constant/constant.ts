@@ -21,7 +21,8 @@ export const COLORS = {
     white: 'white',
     primarycolor: '#11b88f',
     secondarycolor: '#a2deb2',
-    grayColor: '#edece8'
+    grayColor: '#edece8',
+    lightGray:'#b3b3b3',
 }
 
 export const SIZES = {
@@ -37,7 +38,8 @@ export const SIZES = {
 export const FONTS= {
     fontLarge: 36,
     fontMedium: 24,
-    fontSmall: 12,
+    fontSmall: 16,
+    fontNormal: 20,
     fontWeightLarge: '700',
     fontWeightMedium: '500'
 }
@@ -54,5 +56,9 @@ export const ICONS = {
     search: require('../images/searchicons.png'),
     left:require('../images/iconleft.png'),
     right: require('../images/iconright.png')
+}
+
+export const STORAGE_KEY = {
+    bookmark : 'BOOKMARK'
 }
 

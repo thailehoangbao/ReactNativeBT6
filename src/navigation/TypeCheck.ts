@@ -6,7 +6,9 @@ export type MainStackParamList = {
     HOME: undefined,
     SPLASHSCREEN: undefined,
     BUTTONTABS: undefined,
-    DETAIL: undefined,
+    DETAIL: {
+        id:string
+    },
 };
 
 export type PropsPush = NativeStackScreenProps<MainStackParamList,SCREENS.HOME>
@@ -15,4 +17,5 @@ export type PropsPushButtonTabsPage = NativeStackNavigationProp<MainStackParamLi
 export type PropsRoute = RouteProp<MainStackParamList,SCREENS.HOME>
 
 export type PropsPushTrendingToDetailPage= NativeStackNavigationProp<MainStackParamList,SCREENS.DETAIL>
+export type PropsRouteDetail = RouteProp<MainStackParamList,SCREENS.DETAIL>
 

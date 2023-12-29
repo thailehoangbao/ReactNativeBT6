@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native'
-import { COLORS, SIZES } from '../../constant/constant'
+import { COLORS, FONTS, SIZES } from '../../constant/constant'
 
 export const styleDetail = StyleSheet.create({
     cDetail: {
@@ -21,7 +21,17 @@ export const styleDetail = StyleSheet.create({
     avatar: {
         width: 45,
         height: 45,
-        marginRight: SIZES.marginSmall
+        marginRight: SIZES.marginSmall,
+        borderRadius: 22.5,
+        borderWidth:1,
+    },
+    avatarMarginLeft: {
+        width: 45,
+        height: 45,
+        marginRight: SIZES.marginSmall,
+        borderRadius: 22.5,
+        borderWidth:1,
+        marginLeft: -32
     },
     cContent: {
         flexDirection:'column',
@@ -51,4 +61,30 @@ export const styleDetail = StyleSheet.create({
         alignContent: 'center',
         paddingTop: SIZES.paddingSmall
     },
+    cBody: {
+        padding: SIZES.paddingSmall
+    },
+    cBodyFlexRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignContent: 'center',
+    },
+    textHeading: {
+        fontSize: FONTS.fontNormal,
+        fontWeight: '700',
+        flex:1,
+    },
+    subText: {
+        color: COLORS.lightGray
+    },
+    cIncredientText: {
+        fontSize: FONTS.fontNormal,
+        fontWeight:  '700'
+    },
+    cIncredientItem: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: SIZES.marginSmall
+    }
 })
