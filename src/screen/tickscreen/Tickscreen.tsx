@@ -4,7 +4,7 @@ import storage from '../../storage/storage'
 import { STORAGE_KEY } from '../../constant/constant'
 import { TypeBookMark } from '../../../api/Type'
 import ItemCategories from '../home/components/ItemCategories'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import { RootState } from '../../../redux/store'
 
 export default function Tickscreen() {
@@ -17,7 +17,6 @@ export default function Tickscreen() {
   //     setListData(data)
   //   })
   // },listData)
-  const dispatch = useDispatch();
   const listData = useSelector((state: RootState) => state['listdata/bookmark'].listData)
   console.log("kiem tra1 ",listData)
   return (

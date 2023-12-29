@@ -5,9 +5,8 @@ import { TypeBookMark } from "../api/Type";
 
 export const ListDataBookmark = createAsyncThunk(
     'listdata/bookmark',
-    async () => {
-        const response = await storage.load({ key: STORAGE_KEY.bookmark })
-        return response.data
+    async (item) => {
+        return item
     }
 )
 interface BookmarksState {

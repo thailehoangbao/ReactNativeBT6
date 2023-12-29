@@ -9,7 +9,7 @@ import Toast from 'react-native-toast-message';
 import storage from '../../../storage/storage'
 import { TypeBookMark } from '../../../../api/Type'
 import { useDispatch } from 'react-redux'
-import { BookMarkSlice, ListDataBookmark } from '../../../../redux/BookMarkReducer'
+
 
 type Props = {
     image: string,
@@ -52,7 +52,7 @@ export default function HeaderFood({ image,title,id }: Props) {
                     key: STORAGE_KEY.bookmark,
                     data: newData
                 })
-                // dispatch(ListDataBookmark())
+                dispatch(await storage.load({key: STORAGE_KEY.bookmark}))
             }
         } 
         catch(err) {
