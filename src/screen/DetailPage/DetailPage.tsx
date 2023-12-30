@@ -14,7 +14,7 @@ export default function DetailPage() {
     const meal = data?.meals[0];
     return (
         <ScrollView style={{flex:1}}>
-            <HeaderFood image={meal?.strMealThumb ? meal?.strMealThumb : ''} title={meal?.strMeal ? meal?.strMeal : ''} id={meal?.idMeal ? meal?.idMeal : ''}/>
+            <HeaderFood image={meal?.strMealThumb ? meal?.strMealThumb : 'https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg'} title={meal?.strMeal ? meal?.strMeal : ''} id={meal?.idMeal ? meal?.idMeal : ''}/>
             <Body meal={meal}/>
             <Toast />
         </ScrollView>

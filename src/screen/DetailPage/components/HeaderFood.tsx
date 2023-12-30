@@ -9,15 +9,16 @@ import Toast from 'react-native-toast-message';
 import storage from '../../../storage/storage'
 import { TypeBookMark } from '../../../../api/Type'
 import { useDispatch } from 'react-redux'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
 type Props = {
     image: string,
-    title: string ,
+    title: string,
     id: string
 }
 
-export default function HeaderFood({ image,title,id }: Props) {
+export default function HeaderFood({ image, title, id }: Props) {
     const navigation = useNavigation<PropsPushTrendingToDetailPage>()
 
     const onBookMark = async () => {
@@ -43,19 +44,32 @@ export default function HeaderFood({ image,title,id }: Props) {
         }
 
         try {
-            const data: TypeBookMark[] = await storage.load({key: STORAGE_KEY.bookmark})
-            const filterData = data.filter(item => item.id == id);
-            console.log(data)
-            if (filterData.length == 0) {
-                const newData = [...data,dataBookMark]
-                storage.save({
-                    key: STORAGE_KEY.bookmark,
-                    data: newData
-                })
-                dispatch(await storage.load({key: STORAGE_KEY.bookmark}))
+            // const data: TypeBookMark[] = await storage.load({key: STORAGE_KEY.bookmark})
+            // const filterData = data.filter(item => item.id == id);
+            // console.log(data)
+            // if (filterData.length == 0) {
+            //     const newData = [...data,dataBookMark]
+            //     storage.save({
+            //         key: STORAGE_KEY.bookmark,
+            //         data: newData
+            //     })
+            //     dispatch(await storage.load({key: STORAGE_KEY.bookmark}))
+            // }
+
+            const data: any = await AsyncStorage.getItem(STORAGE_KEY.bookmark);
+            console.log('data123445', data);
+            if (!data) {
+                return AsyncStorage.setItem(STORAGE_KEY.bookmark, JSON.stringify([dataBookMark]))
             }
-        } 
-        catch(err) {
+            const dataP: TypeBookMark[] = JSON.parse(data);
+            console.log('data', dataP);
+            const filterDataP = dataP.filter(item => item.id == id);
+            if (filterDataP.length == 0) {
+                const newDataP = [...dataP, dataBookMark];
+                AsyncStorage.setItem(STORAGE_KEY.bookmark, JSON.stringify(newDataP))
+            }
+        }
+        catch (err) {
             storage.save({
                 key: STORAGE_KEY.bookmark,
                 data: [dataBookMark]
